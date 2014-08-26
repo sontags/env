@@ -48,7 +48,7 @@ func Parse(p string) {
 
 func printHelpAndExit() {
 	fmt.Printf("'%s' needs to be configured via environment variables and does not take any arguments.\n", os.Args[0])
-	fmt.Println("The following environment variables are read:")
+	fmt.Println("The following environment variables are read ('_nil_' implies an empty string):\n")
 	for _, e := range envvars {
 		def := e.def
 		if def == "" {
