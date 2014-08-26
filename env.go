@@ -53,6 +53,8 @@ func printHelpAndExit() {
 		def := e.def
 		if def == "" {
 			def = "_nil_"
+		} else {
+			def = "'" + def + "'"
 		}
 		fmt.Printf("\t%s%s=%s: %s\n", prefix, e.name, def, e.desc)
 	}
