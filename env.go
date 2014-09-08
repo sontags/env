@@ -34,11 +34,11 @@ func Var(dest *string, name string, def string, desc string) {
 	envvars = append(envvars, v)
 }
 
-func Parse(p string) {
+func Parse(p string, allowArgs bool) {
 	if prefix = p; prefix != "" {
 		prefix = prefix + "_"
 	}
-	if len(os.Args) > 1 {
+	if len(os.Args) > 1 && allowArgs == false {
 		printHelpAndExit()
 	}
 	for _, e := range envvars {
